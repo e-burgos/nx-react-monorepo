@@ -1,0 +1,46 @@
+{
+  "name": "@membrane-webapp/source",
+  "workspaces": [
+    "shared/*",
+    "apps/*"
+  ],
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nx dev @membrane-webapp/host",
+    "dashboard:dev": "npx nx dev @membrane-webapp/dashboard",
+    "accounts:dev": "npx nx dev @membrane-webapp/accounts",
+    "dev:all": "npm run host:dev && npm run dashboard:dev && npm run wallets:dev",
+    "host:build": "npx nx build @membrane-webapp/host",
+    "host:start": "npx nx start @membrane-webapp/host",
+    "host:serve": "npx nx serve @membrane-webapp/host",
+    "host:typecheck": "npx nx typecheck @membrane-webapp/host",
+    "host:lint": "npx nx link @membrane-webapp/host",
+    "host:show": "npx nx show project @membrane-webapp/host --web",
+    "build": "npx nx run-many --target=build --all",
+    "typecheck": "npx nx run-many -t typecheck --all",
+    "lint": "npx nx run-many --target=lint --all",
+    "test": "npx nx run-many --target=test --all",
+    "test:watch": "npx nx run-many --target=test --all --watch",
+    "release": "npx nx release",
+    "release:first": "sudo nx release --first-release",
+    "graph": "npx nx graph"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nx/eslint": "^18.3.4",
+    "@nx/vite": "^18.3.4",
+    "@nx/web": "18.3.4",
+    "@vitest/ui": "^1.3.1",
+    "eslint": "~8.57.0",
+    "nx": "18.3.4",
+    "vite": "~5.0.0",
+    "vitest": "^1.3.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
